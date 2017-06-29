@@ -195,7 +195,7 @@ char **Expand_maze_row(char **maze, int nrow, int ncol, int *rrow, int *rcol)
 
 
 	// /* for checking output purpose
-	for(i=0; i < *rrow; i++){
+	/*for(i=0; i < *rrow; i++){
 		 for(j=0; j < *rcol; j++){
 			printf("%c", new_maze[i][j]);
 		}
