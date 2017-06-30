@@ -76,6 +76,7 @@ char **Read_maze_from_2Dfile(FILE *fptr, int *nrow, int *ncol)
 	f = fgetc(fptr);
 	}
 
+	printf("row %d, col %d\n", *nrow, *ncol);
 	//int length = ftell(fptr);
 	//(*ncol) = ((length - *nrow) / (*nrow));
 
@@ -89,14 +90,14 @@ char **Read_maze_from_2Dfile(FILE *fptr, int *nrow, int *ncol)
 
 	for(i=0; i < *nrow; i++){
 	    for (j=0; j <= *ncol; j++){	
-			//f = fgetc(fptr);
-		if(f != '\n'){
-		   	maze[i][j] = fgetc(fptr);}
-		
+		int k = fgetc(fptr);
+		if(k != '\n'){
+		   	maze[i][j] = k;}
+		//	printf("%c", maze[i][j]);
 
 	     }
 	}
-
+//	printf("\n");
 	return maze;
 }
 
@@ -188,21 +189,13 @@ char **Expand_maze_row(char **maze, int nrow, int ncol, int *rrow, int *rcol)
 
 
 
-
-
-
-
-
-
-	// /* for checking output purpose
-	/*for(i=0; i < *rrow; i++){
+/*	for(i=0; i < *rrow; i++){
 		 for(j=0; j < *rcol; j++){
 			printf("%c", new_maze[i][j]);
 		}
 	printf("\n");
 	}
-	printf("\n");
-	// */ comment out after checking
+	printf("\n"); */
 
 	return new_maze;
 }
