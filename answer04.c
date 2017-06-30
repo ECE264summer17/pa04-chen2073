@@ -76,9 +76,6 @@ char **Read_maze_from_2Dfile(FILE *fptr, int *nrow, int *ncol)
 	f = fgetc(fptr);
 	}
 
-	printf("row %d, col %d\n", *nrow, *ncol);
-	//int length = ftell(fptr);
-	//(*ncol) = ((length - *nrow) / (*nrow));
 
 	maze = Allocate_maze_space(*nrow, *ncol);
 
@@ -86,18 +83,15 @@ char **Read_maze_from_2Dfile(FILE *fptr, int *nrow, int *ncol)
 
 	int i, j;
 
-	//f = 0;
 
 	for(i=0; i < *nrow; i++){
 	    for (j=0; j <= *ncol; j++){	
 		int k = fgetc(fptr);
 		if(k != '\n'){
 		   	maze[i][j] = k;}
-		//	printf("%c", maze[i][j]);
 
 	     }
 	}
-//	printf("\n");
 	return maze;
 }
 
@@ -158,20 +152,7 @@ char **Expand_maze_row(char **maze, int nrow, int ncol, int *rrow, int *rcol)
 	new_maze = Allocate_maze_space(*rrow, *rcol);
 
 	int i, j;
-
-	/*for(i=0; i < (*nrrow); i++){
-
-		for(j=0; j < (*rcol); j++){
-	
-			if( (i+1) * (j+1) == sizeof(maze) ){             //check end of maze
-			new_maze[i][j] = maze[(*rrow+1) - i][j];}   
-
-			new_maze[i][j] = maze[i][j];
-		}
-	}*/
-
-	for(i=0; i < nrow; i++){
-
+	for(i=0; i< nrow; i++){
 		for(j=0; j < ncol; j++){
 
 			new_maze[i][j] = maze[i][j];
@@ -186,16 +167,6 @@ char **Expand_maze_row(char **maze, int nrow, int ncol, int *rrow, int *rcol)
 		}
 	k++;
 	}
-
-
-
-/*	for(i=0; i < *rrow; i++){
-		 for(j=0; j < *rcol; j++){
-			printf("%c", new_maze[i][j]);
-		}
-	printf("\n");
-	}
-	printf("\n"); */
 
 	return new_maze;
 }
