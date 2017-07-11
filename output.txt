@@ -1,0 +1,35 @@
+TEST CASE: 1 (Memory Functions): 
+Tests for maze13x9
+PASS
+Tests for maze5x7
+PASS
+Tests for maze7x9
+PASS
+TEST CASE: 2 (Reading Maze From File): 
+Tests for maze13x9
+PASS
+Tests for maze5x7
+PASS
+Tests for maze7x9
+PASS
+TEST CASE: 3 (Writing Maze To File): 
+Tests for maze13x9
+PASS
+Tests for maze5x7
+PASS
+Tests for maze7x9
+PASS
+TEST CASE: 4 (Expand Maze Row): 
+Tests for maze13x9
+PASS
+Tests for maze5x7
+PASS
+Tests for maze7x9
+PASS
+TEST CASE: valgrind
+memcheck.log.0
+memcheck.log.1
+memcheck.log.2
+memcheck.log.3
+ PASS
+Points: 4.000000 
